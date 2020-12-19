@@ -11,17 +11,18 @@ $(document).ready(function() {
         });
     });
 
-    $('.login').click(function(){
+    $('#loginForm').submit(function(event){
         event.preventDefault();
         $('.login').text('Dang it!');
 
-        let audioElement = new Audio("assets/js/stepBro.mp3");
-        audioElement.play();
+        console.log('the form has been submitted');
+        // let audioElement = new Audio("assets/js/stepBro.mp3");
+        // audioElement.play();
 
-        $('#stepBro').fadeIn(3000);
-        $('#stepBro').slideUp(3000);
-        $('#loginDiv').hide();
-        $('h1').hide();
-        $('.marginBottom').hide();
+        // $('#stepBro').fadeIn(3000);
+        // $('#stepBro').slideUp(3000);
+        // $('#loginDiv').hide();
+        // $('h1').hide();
+        // $('.marginBottom').hide();
     });
 });
