@@ -7,6 +7,7 @@
 <div class="row">
     <a href="dashboard.php"><button class="btn btn-secondary btn-sm"><i class="fas fa-arrow-left"></i>&nbsp;Back</button></a>
 </div>
+<br>
 <div class="form-group">
     <?php successNotif('diaryAdded', 'Story added to diary'); ?>
 </div>

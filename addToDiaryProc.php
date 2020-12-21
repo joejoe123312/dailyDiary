@@ -9,6 +9,7 @@ if (isset($_POST['submit'])) {
     //get the user id of the person who is currently loged in 
     $userId = getUserId($_SESSION['credentialsId']);
 
+
     //insert into diary table
     $insert['user_id'] = $userId;
     $insert['subject'] = $subject;

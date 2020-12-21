@@ -32,6 +32,30 @@ function get_where($table_name, $id)
 	return $result;
 }
 
+function getWhere($table, $column, $id)
+{
+	$conn = getConnection();
+	$sql = $sql = "SELECT * FROM $table where " . $column . "='" . $id . "'";
+	$result = mysqli_query($conn, $sql);
+
+	$array = array();
+
+
+	while ($row = mysqli_fetch_assoc($result)) {
+		$sqliArray['id'] = $row['id'];
+		$sqliArray['user_id'] = $row['user_id'];
+		$sqliArray['subject'] = $row['subject'];
+		$sqliArray['story'] = $row['story'];
+		$sqliArray['date'] = $row['date'];
+		$sqliArray['time'] = $row['time'];
+
+		array_push($array, $sqliArray);
+	}
+
+
+	return $array;
+}
+
 function get_where_custom($table_name, $column, $value)
 {
 	$conn = getConnection();
@@ -314,7 +338,7 @@ function middleware()
 function getUserId($credentialsId)
 {
 	// $usersTable = get_where_custom('users', 'credentials_id', $credentialsId)->fetch_assoc();
-	$usersTable = get_where_custom('users', 'credentials_id', $credentialsId);
+	$usersTable = get_where_custom('users', 'credentials_id', $credentialsId)->fetch_assoc();
 
 	return $usersTable['id'];
 }
