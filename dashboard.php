@@ -12,7 +12,7 @@
 //get the stories of the user
 // $userId = getUserId($_SESSION['credentialsId']);
 $diaryTable = get_where_custom('diary', 'user_id', 1);
-arrayShow($diaryTable);
+
 die;
 
 // dito yung sira kasi iba yung nirereturn niya dapat mapakita dito yung assoc array para magamit 
